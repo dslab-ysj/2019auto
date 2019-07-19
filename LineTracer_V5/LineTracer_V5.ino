@@ -118,13 +118,13 @@ void loop()
   digitalWrite(LED_GRE,HIGH);
   while(!digitalRead(SW_L))
   {
-    int LineVal=300;
+    int LineVal=200;
     int LeftSensor = analogRead(IR_L); 
     int RightSensor = analogRead(IR_R); 
 
-    if (LeftSensor<LineVal && RightSensor>LineVal) TurnLeft();
-    else if(LeftSensor>LineVal && RightSensor<LineVal) TurnRight();
-    else if (LeftSensor>LineVal && RightSensor<LineVal) GoForward();
+    if (LeftSensor>LineVal && RightSensor<LineVal) TurnLeft();
+    else if(LeftSensor<LineVal && RightSensor>LineVal) TurnRight();
+    else if (LeftSensor<LineVal && RightSensor>LineVal) GoForward();
     else {MotorStop();}
   }
 }
