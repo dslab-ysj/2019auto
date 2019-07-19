@@ -124,7 +124,7 @@ void loop()
 
     if (LeftSensor>LineVal && RightSensor<LineVal) TurnLeft();
     else if(LeftSensor<LineVal && RightSensor>LineVal) TurnRight();
-    else if (LeftSensor<LineVal && RightSensor>LineVal) GoForward();
+    else if (LeftSensor<LineVal && RightSensor<LineVal) GoForward();
     else {MotorStop();}
   }
 }
